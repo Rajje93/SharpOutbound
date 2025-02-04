@@ -120,39 +120,44 @@
 }
 
 @media (max-width: 768px) {
-  .compare-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-  }
-
   .comparison-table {
-    margin: 0 1rem;
+    margin: 0;
     padding: 1rem;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
   }
 
-  .table-header {
-    padding: 0 0.5rem 1rem 0.5rem;
+  .compare-title {
+    font-size: 2rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 120px repeat(4, 140px); /* Fixed column widths */
+    min-width: 680px; /* Ensure minimum width to prevent squishing */
+    gap: 0.5rem;
   }
 
   .header-text {
-    font-size: 1rem;
-    padding: 10px 16px;
-  }
-
-  .header-logo {
-    height: 20px;
-  }
-
-  .table-row {
-    padding: 15px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
   }
 
   .row-label {
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding-left: 0.5rem;
   }
 
   .table-cell {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}
+
+/* Add smooth scrolling for touch devices */
+@media (hover: none) {
+  .comparison-table {
+    -webkit-overflow-scrolling: touch;
   }
 } 
