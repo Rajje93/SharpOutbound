@@ -212,8 +212,8 @@ body {
   .background-orbs::before {
     content: '';
     position: fixed;
-    width: 200vw;
-    height: 200vw;
+    width: 300vw;
+    height: 300vw;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
