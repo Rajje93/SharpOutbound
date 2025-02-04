@@ -173,7 +173,7 @@ body {
   background: radial-gradient(circle at center, #FF58F9, transparent 60%);
   bottom: -10%;
   right: -5%;
-  opacity: 0.6;
+  opacity: 0.8;
   animation-delay: -5s;
 }
 
@@ -181,7 +181,7 @@ body {
   background: radial-gradient(circle at center, #FF58F9, transparent 60%);
   bottom: -15%;
   left: -5%;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 /* Mobile orbs - completely new approach */
