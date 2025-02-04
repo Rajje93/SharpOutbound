@@ -184,6 +184,23 @@ body {
   opacity: 0.2;
 }
 
+/* Mobile single orb */
+@media (max-width: 768px) {
+  .background-orbs::before {
+    width: 1000vw;  /* Much bigger */
+    height: 1000vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;  /* Brighter */
+    filter: blur(150px);  /* More blur for smoother edges */
+  }
+
+  .background-orbs::after {
+    display: none;
+  }
+}
+
 @keyframes orbFloat {
   0%, 100% {
     transform: translate(0, 0);
@@ -204,285 +221,6 @@ body {
   .background-orbs::before,
   .background-orbs::after {
     opacity: 0;
-  }
-}
-
-/* Mobile single orb */
-@media (max-width: 768px) {
-  .background-orbs::before {
-    content: '';
-    position: fixed;
-    width: 600vw;
-    height: 600vw;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: radial-gradient(circle at center, #FF58F9, transparent 70%);
-    filter: blur(120px);
-    opacity: 0.35;
-  }
-
-  .background-orbs::after {
-    display: none;
-  }
-}
-
-@keyframes floatOrb1 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-5%, 5%); }
-}
-
-@keyframes floatOrb2 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(5%, -5%); }
-}
-
-@keyframes pulseOrb {
-  0%, 100% { 
-    opacity: 0.15;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% { 
-    opacity: 0.1;
-    transform: translate(-50%, -50%) scale(0.9);
-  }
-}
-
-/* Section dividers */
-.section-divider {
-  position: relative;
-  height: 120px;
-  margin: -60px 0;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.divider-wave {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.1;
-  transform: scale(1.2);
-}
-
-/* Add subtle gradient overlays for section transitions */
-.section-transition {
-  position: relative;
-  overflow: hidden;
-}
-
-.section-transition::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(
-    180deg,
-    transparent,
-    var(--navy-dark) 100%
-  );
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-/* Update section spacing */
-.hero,
-.pricing,
-.faq,
-.footer,
-.section {
-  position: relative;
-  background: transparent;
-  padding: var(--spacing-xl) 0;
-  margin: 0;
-}
-
-/* Add container consistency */
-.container {
-  width: min(100% - 2rem, 1200px);
-  margin-inline: auto;
-  position: relative;
-  z-index: 2;
-}
-
-/* Enhanced glassmorphism */
-.glass-effect {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-effect:hover {
-  transform: translateY(-5px);
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.3),
-    0 0 30px rgba(135, 88, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Smooth section transitions */
-section {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Parallax scroll effect */
-.parallax-wrapper {
-  position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-}
-
-.parallax-element {
-  transform: translateZ(0);
-  transition: transform 0.1s linear;
-  will-change: transform;
-}
-
-/* Animations */
-@keyframes orbFloat {
-  0% {
-    transform: translate(0, 0) scale(1);
-    filter: blur(140px);
-  }
-  50% {
-    filter: blur(160px);
-  }
-  100% {
-    transform: translate(-5%, -5%) scale(1.15);
-    filter: blur(140px);
-  }
-}
-
-/* Add a subtle pulse to the orbs */
-.background-orbs::before,
-.background-orbs::after {
-  animation: orbPulse 8s ease-in-out infinite alternate;
-}
-
-@keyframes orbPulse {
-  0% {
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-
-/* Add scroll-based interactions */
-@media (prefers-reduced-motion: no-preference) {
-  .scroll-reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .scroll-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Base responsive styles */
-:root {
-  /* Responsive spacing variables */
-  --spacing-xs: clamp(0.5rem, 2vw, 1rem);
-  --spacing-sm: clamp(1rem, 3vw, 1.5rem);
-  --spacing-md: clamp(1.5rem, 4vw, 2rem);
-  --spacing-lg: clamp(2rem, 6vw, 4rem);
-  --spacing-xl: clamp(3rem, 8vw, 6rem);
-
-  /* Responsive typography */
-  --font-size-xs: clamp(0.75rem, 2vw, 0.875rem);
-  --font-size-sm: clamp(0.875rem, 2.5vw, 1rem);
-  --font-size-base: clamp(1rem, 3vw, 1.125rem);
-  --font-size-lg: clamp(1.125rem, 3.5vw, 1.25rem);
-  --font-size-xl: clamp(1.25rem, 4vw, 1.5rem);
-  --font-size-2xl: clamp(1.5rem, 5vw, 2rem);
-  --font-size-3xl: clamp(2rem, 6vw, 3rem);
-  --font-size-4xl: clamp(2.5rem, 7vw, 4rem);
-}
-
-/* Responsive grid layouts */
-.grid {
-  display: grid;
-  gap: var(--spacing-md);
-}
-
-/* Responsive images */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Mobile menu styles */
-@media (max-width: 768px) {
-  .mobile-hidden {
-    display: none;
-  }
-
-  .mobile-only {
-    display: block;
-  }
-
-  /* Improve touch targets */
-  button, 
-  a {
-    min-height: 44px;
-    min-width: 44px;
-    padding: var(--spacing-sm);
-  }
-
-  /* Adjust spacing */
-  section {
-    padding: var(--spacing-lg) 0;
-  }
-
-  /* Stack grid items */
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Reduce motion */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-
-  .background-orbs {
-    margin-bottom: -20px;
-  }
-
-  .background-orbs::before,
-  .background-orbs::after {
-    width: 45vw;
-    height: 45vw;
-    filter: blur(60px);
-  }
-
-  .background-orbs::before {
-    bottom: -20%;
-  }
-
-  .background-orbs::after {
-    bottom: -25%;
   }
 }
 
