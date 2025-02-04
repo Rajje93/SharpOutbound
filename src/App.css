@@ -187,13 +187,17 @@ body {
 /* Mobile single orb */
 @media (max-width: 768px) {
   .background-orbs::before {
+    content: '';
+    position: fixed;
     width: 1000vw;
     height: 1000vw;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0.4;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #FF58F9, transparent 70%);
     filter: blur(150px);
+    opacity: 0.4;
   }
 
   .background-orbs::after {
