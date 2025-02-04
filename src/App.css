@@ -212,15 +212,15 @@ body {
   .background-orbs::before {
     content: '';
     position: fixed;
-    width: 300vw;
-    height: 300vw;
+    width: 600vw;
+    height: 600vw;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background: radial-gradient(circle at center, #FF58F9, transparent 70%);
     filter: blur(120px);
-    opacity: 0.25;
+    opacity: 0.35;
   }
 
   .background-orbs::after {
