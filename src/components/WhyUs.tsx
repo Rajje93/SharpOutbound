@@ -1,9 +1,13 @@
 import './WhyUs.css';
 import { FaTimes, FaCheck } from 'react-icons/fa';
 
-const WhyUs = () => {
+interface WhyUsProps {
+  className?: string;
+}
+
+const WhyUs: React.FC<WhyUsProps> = ({ className }) => {
   return (
-    <section id="why-us" className="why-us">
+    <section id="why-us" className={`why-us ${className || ''}`}>
       <div className="container">
         <h2 className="section-title">Why most lead gen agencies <em>suck</em></h2>
         

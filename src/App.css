@@ -644,4 +644,23 @@ html {
 .text-reveal.revealed {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   transform: translateY(0);
+}
+
+/* Section reveal animations */
+.slide-right {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-right.revealed,
+.slide-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
 } 
