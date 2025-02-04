@@ -646,21 +646,21 @@ html {
   transform: translateY(0);
 }
 
-/* Section reveal animations */
-.slide-right {
+/* Section slide animations */
+.slide-in-right {
   opacity: 0;
   transform: translateX(-100px);
-  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.slide-left {
+.slide-in-left {
   opacity: 0;
   transform: translateX(100px);
-  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.slide-right.revealed,
-.slide-left.revealed {
+.slide-in-right.revealed,
+.slide-in-left.revealed {
   opacity: 1;
   transform: translateX(0);
 } 

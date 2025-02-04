@@ -72,22 +72,22 @@ function App() {
           <div className="section-divider">
             <div className="divider-wave" />
           </div>
-          <Stats className="slide-right" />
-          <ClientLogos className="slide-left" />
+          <Stats className="slide-in-right" />
+          <ClientLogos className="slide-in-left" />
           <div className="section-divider">
             <div className="divider-wave" />
           </div>
-          <WhyUs className="slide-right" />
+          <WhyUs className="slide-in-right" />
           <div className="section-divider">
             <div className="divider-wave" />
           </div>
           <ConnectClients />
-          <CaseStudies className="slide-left" />
-          <ScaleFast className="slide-right" />
-          <CompareOptions className="slide-left" />
-          <HowWeWork className="slide-right" />
-          <Pricing className="slide-left" />
-          <FAQ className="slide-right" />
+          <CaseStudies className="slide-in-left" />
+          <ScaleFast className="slide-in-right" />
+          <CompareOptions className="slide-in-left" />
+          <HowWeWork className="slide-in-right" />
+          <Pricing className="slide-in-left" />
+          <FAQ className="slide-in-right" />
         </main>
         <Footer />
       </div>
