@@ -69,25 +69,16 @@ function App() {
         <Navbar scrolled={scrolled} />
         <main className="parallax-wrapper">
           <Hero />
-          <div className="section-divider">
-            <div className="divider-wave" />
-          </div>
-          <Stats className="slide-in-right" />
-          <ClientLogos className="slide-in-left" />
-          <div className="section-divider">
-            <div className="divider-wave" />
-          </div>
-          <WhyUs className="slide-in-right" />
-          <div className="section-divider">
-            <div className="divider-wave" />
-          </div>
+          <Stats />
+          <ClientLogos />
+          <WhyUs />
           <ConnectClients />
-          <CaseStudies className="slide-in-left" />
-          <ScaleFast className="slide-in-right" />
-          <CompareOptions className="slide-in-left" />
-          <HowWeWork className="slide-in-right" />
-          <Pricing className="slide-in-left" />
-          <FAQ className="slide-in-right" />
+          <CaseStudies />
+          <ScaleFast />
+          <CompareOptions />
+          <HowWeWork />
+          <Pricing />
+          <FAQ />
         </main>
         <Footer />
       </div>
