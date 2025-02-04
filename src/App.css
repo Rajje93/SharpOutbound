@@ -220,14 +220,6 @@ body {
   }
 }
 
-/* Desktop orbs */
-@media (min-width: 769px) {
-  .background-orbs::before,
-  .background-orbs::after {
-    opacity: 0;
-  }
-}
-
 /* Tablet styles */
 @media (min-width: 769px) and (max-width: 1024px) {
   .tablet-hidden {
