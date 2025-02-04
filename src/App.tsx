@@ -62,8 +62,6 @@ function App() {
     <div className="app-wrapper">
       <div className="background-orbs" />
       <div className="grain" />
-      <div className="ambient-light" />
-
       <div className="app">
         <Navbar scrolled={scrolled} />
         <main className="parallax-wrapper">

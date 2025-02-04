@@ -39,9 +39,9 @@ body {
 
 .app-wrapper {
   min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-  background: var(--navy-darker);
+  background: var(--navy-dark);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Ensure all sections use the global background */
@@ -109,10 +109,12 @@ body {
 .grain {
   position: fixed;
   inset: 0;
-  z-index: 1;
-  opacity: 0.3;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.1'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.08'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  mix-blend-mode: overlay;
   pointer-events: none;
+  z-index: 1;
+  animation: grainShift 8s steps(10) infinite;
 }
 
 .app {
@@ -147,54 +149,89 @@ body {
   --mouse-y: 50%;
 }
 
-/* Main background orbs - Original PC version */
+/* Main background orbs */
 .background-orbs {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-  margin-bottom: -30px;
 }
 
-.background-orbs::before,
-.background-orbs::after {
-  content: '';
-  position: absolute;
-  width: 30vw;
-  height: 30vw;
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: orbFloat 20s infinite ease-in-out;
-}
-
-.background-orbs::before {
-  background: radial-gradient(circle at center, #8758FF, transparent 60%);
-  bottom: -10%;
-  right: -5%;
-  opacity: 0.25;
-  animation-delay: -5s;
-}
-
-.background-orbs::after {
-  background: radial-gradient(circle at center, #8758FF, transparent 60%);
-  bottom: -15%;
-  left: -5%;
-  opacity: 0.15;
-}
-
-@keyframes orbFloat {
-  0%, 100% {
-    transform: translate(0, 0);
+/* Desktop orbs */
+@media (min-width: 769px) {
+  .background-orbs::before,
+  .background-orbs::after {
+    content: '';
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    background: linear-gradient(135deg, #FF58F9 0%, #FF58F9 100%);
+    transition: opacity 0.3s ease;
   }
-  25% {
-    transform: translate(5%, 5%);
+
+  .background-orbs::before {
+    top: -10%;
+    right: -10%;
+    animation: floatOrb1 20s ease-in-out infinite;
   }
-  50% {
-    transform: translate(0, 10%);
+
+  .background-orbs::after {
+    bottom: -10%;
+    left: -10%;
+    animation: floatOrb2 25s ease-in-out infinite;
   }
-  75% {
-    transform: translate(-5%, 5%);
+
+  /* Remove orbs on hover */
+  .app-wrapper:hover .background-orbs::before,
+  .app-wrapper:hover .background-orbs::after {
+    opacity: 0;
+  }
+}
+
+/* Mobile single orb */
+@media (max-width: 768px) {
+  .background-orbs::before {
+    content: '';
+    position: fixed;
+    width: 80vw;
+    height: 80vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF58F9 0%, #FF58F9 100%);
+    filter: blur(100px);
+    opacity: 0.15;
+    animation: pulseOrb 8s ease-in-out infinite;
+  }
+
+  .background-orbs::after {
+    display: none;
+  }
+}
+
+@keyframes floatOrb1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-5%, 5%); }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(5%, -5%); }
+}
+
+@keyframes pulseOrb {
+  0%, 100% { 
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% { 
+    opacity: 0.1;
+    transform: translate(-50%, -50%) scale(0.9);
   }
 }
 
@@ -415,30 +452,23 @@ img {
     }
   }
 
+  .background-orbs {
+    margin-bottom: -20px;
+  }
+
   .background-orbs::before,
   .background-orbs::after {
-    width: 80vmax;
-    height: 80vmax;
+    width: 45vw;
+    height: 45vw;
     filter: blur(60px);
-    opacity: 0.4;
   }
 
   .background-orbs::before {
-    top: -30%;
-    left: -30%;
+    bottom: -20%;
   }
 
   .background-orbs::after {
-    bottom: -30%;
-    right: -30%;
-  }
-
-  .grain {
-    opacity: 0.2;
-  }
-
-  .ambient-light {
-    opacity: 0.8;
+    bottom: -25%;
   }
 }
 
