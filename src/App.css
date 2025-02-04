@@ -147,46 +147,54 @@ body {
   --mouse-y: 50%;
 }
 
-/* Main background orbs */
+/* Main background orbs - Original PC version */
 .background-orbs {
   position: fixed;
   inset: 0;
+  pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  margin-bottom: -30px;
 }
 
 .background-orbs::before,
 .background-orbs::after {
   content: '';
   position: absolute;
-  width: 60vmax;
-  height: 60vmax;
+  width: 30vw;
+  height: 30vw;
   border-radius: 50%;
   filter: blur(80px);
+  animation: orbFloat 20s infinite ease-in-out;
 }
 
 .background-orbs::before {
-  background: var(--glow-purple);
-  top: -20%;
-  left: -10%;
-  opacity: 0.3;
-  animation: floatOrb 20s ease-in-out infinite;
+  background: radial-gradient(circle at center, #8758FF, transparent 60%);
+  bottom: -10%;
+  right: -5%;
+  opacity: 0.25;
+  animation-delay: -5s;
 }
 
 .background-orbs::after {
-  background: var(--glow-pink);
-  bottom: -20%;
-  right: -10%;
-  opacity: 0.3;
-  animation: floatOrb 20s ease-in-out infinite reverse;
+  background: radial-gradient(circle at center, #8758FF, transparent 60%);
+  bottom: -15%;
+  left: -5%;
+  opacity: 0.15;
 }
 
-@keyframes floatOrb {
+@keyframes orbFloat {
   0%, 100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5%, 5%);
   }
   50% {
-    transform: translate(5%, 5%) scale(1.1);
+    transform: translate(0, 10%);
+  }
+  75% {
+    transform: translate(-5%, 5%);
   }
 }
 
@@ -427,6 +435,10 @@ img {
 
   .grain {
     opacity: 0.2;
+  }
+
+  .ambient-light {
+    opacity: 0.8;
   }
 }
 
