@@ -189,30 +189,30 @@ body {
   .background-orbs::before {
     content: '';
     position: fixed;
-    width: 1000vw;
-    height: 1000vw;
+    width: 300vw;  /* Smaller size */
+    height: 300vw;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: radial-gradient(circle at center, #FF58F9, transparent 70%);
-    filter: blur(150px);
-    opacity: 0.4;
+    background: radial-gradient(circle at center, #FF58F9, transparent 60%);
+    filter: blur(100px);
+    opacity: 0.6;
   }
 
   .background-orbs::after {
     content: '';
     position: fixed;
-    width: 800vw;
-    height: 800vw;
-    left: 45%;
-    top: 45%;
+    width: 250vw;  /* Slightly smaller than first orb */
+    height: 250vw;
+    left: 40%;  /* Offset position */
+    top: 60%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: radial-gradient(circle at center, #FF58F9, transparent 70%);
-    filter: blur(120px);
-    opacity: 0.3;
-    display: block;  /* Show the second orb on mobile */
+    background: radial-gradient(circle at center, #FF58F9, transparent 60%);
+    filter: blur(80px);
+    opacity: 0.5;
+    display: block;
   }
 }
 
