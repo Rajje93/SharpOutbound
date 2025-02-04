@@ -94,10 +94,26 @@
   }
 }
 
-/* Show hamburger menu earlier to prevent text wrapping */
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+/* Mobile Styles */
 @media (max-width: 1024px) {
   .mobile-menu-btn {
     display: block;
+  }
+
+  .navbar-container {
+    padding: 1rem 2rem;
   }
 
   .navbar-links {
@@ -110,56 +126,38 @@
     background: rgba(28, 30, 44, 0.98);
     backdrop-filter: blur(10px);
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 5rem 2rem 2rem;
-    transition: right 0.3s ease;
+    transition: all 0.3s ease;
     z-index: 999;
   }
 
   .navbar-links.active {
     right: 0;
-    display: flex;
   }
 
-  .navbar-links a {
-    margin: 1rem 0;
+  .nav-link {
     font-size: 1.2rem;
+    margin: 1rem 0;
     opacity: 1;
     visibility: visible;
   }
 
   .btn.btn-primary {
-    width: 100%;
-    margin-top: 1rem;
+    width: 80%;
+    margin-top: 2rem;
     justify-content: center;
     display: flex;
   }
 }
 
-@media (max-width: 768px) {
+/* Remove this media query that was hiding the links */
+/* @media (max-width: 768px) {
   .navbar-links {
     display: none;
   }
-  
-  .navbar.scrolled {
-    background: rgba(28, 30, 42, 0.95);
-  }
-
-  .navbar-logo {
-    height: 28px;
-  }
-}
-
-/* Add these new styles for mobile menu */
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  z-index: 1000;
-}
+} */
 
 /* Prevent body scroll when menu is open */
 body.menu-open {
