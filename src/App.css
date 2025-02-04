@@ -187,13 +187,13 @@ body {
 /* Mobile single orb */
 @media (max-width: 768px) {
   .background-orbs::before {
-    width: 1000vw;  /* Much bigger */
+    width: 1000vw;
     height: 1000vw;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0.4;  /* Brighter */
-    filter: blur(150px);  /* More blur for smoother edges */
+    opacity: 0.4;
+    filter: blur(150px);
   }
 
   .background-orbs::after {
