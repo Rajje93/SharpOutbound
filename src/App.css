@@ -552,4 +552,96 @@ footer {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better transitions */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced orb effects */
+.background-orbs::before,
+.background-orbs::after {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Improved hover effects */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(135, 88, 255, 0.2);
+}
+
+/* Better card animations */
+.glass-effect {
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-effect:hover {
+  backdrop-filter: blur(15px);
+  transform: translateY(-5px);
+}
+
+/* Smooth animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Improved button hover */
+.btn {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.1);
+}
+
+/* Card hover effects */
+.glass-effect {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-effect:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Navbar scroll transition */
+.navbar {
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Image hover effects */
+.hover-scale {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Text reveal animation */
+.text-reveal {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.text-reveal.revealed {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: translateY(0);
 } 

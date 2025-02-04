@@ -32,18 +32,21 @@ function App() {
       });
 
       // Reveal elements on scroll
-      document.querySelectorAll('.scroll-reveal').forEach((el) => {
+      document.querySelectorAll('.scroll-reveal, .text-reveal').forEach((el) => {
         const rect = el.getBoundingClientRect();
-        const isVisible = rect.top <= window.innerHeight * 0.8;
+        const isVisible = rect.top <= window.innerHeight * 0.85;
+        
         if (isVisible) {
-          el.classList.add('visible');
+          el.classList.add('revealed');
         }
       });
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [scrollY]);
+  }, []);
 
   // Optional: Add mouse movement effect
   useEffect(() => {
