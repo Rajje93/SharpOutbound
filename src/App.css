@@ -184,7 +184,7 @@ body {
   opacity: 0.6;
 }
 
-/* Mobile single orb */
+/* Mobile orbs */
 @media (max-width: 768px) {
   .background-orbs::before {
     content: '';
@@ -197,11 +197,22 @@ body {
     border-radius: 50%;
     background: radial-gradient(circle at center, #FF58F9, transparent 70%);
     filter: blur(150px);
-    opacity: 0.8;
+    opacity: 0.4;
   }
 
   .background-orbs::after {
-    display: none;
+    content: '';
+    position: fixed;
+    width: 800vw;
+    height: 800vw;
+    left: 45%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #FF58F9, transparent 70%);
+    filter: blur(120px);
+    opacity: 0.3;
+    display: block;  /* Show the second orb on mobile */
   }
 }
 
