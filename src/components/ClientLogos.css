@@ -1,0 +1,98 @@
+.client-logos {
+  padding: 4rem 0;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.logos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.logo-wrapper:hover {
+  opacity: 1;
+}
+
+.logo-wrapper img {
+  height: auto;
+  width: 140px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Specific sizing for different logos */
+.logo-wrapper:nth-child(1) img {
+  width: 100px; /* Ansuite */
+}
+
+.logo-wrapper:nth-child(2) img {
+  width: 100px; /* Elate - reduced from 140px */
+}
+
+.logo-wrapper:nth-child(3) img {
+  width: 120px; /* Proton */
+}
+
+.logo-wrapper:nth-child(4) img {
+  width: 140px; /* Instantly */
+}
+
+.logo-wrapper:nth-child(5) img {
+  width: 130px; /* Vention */
+}
+
+@media (max-width: 1024px) {
+  .logos-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .client-logos {
+    padding: 3rem 0;
+  }
+
+  .logos-grid {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 2rem;
+  }
+
+  .logo-wrapper {
+    width: 100%;
+  }
+
+  .logo-wrapper img {
+    width: 120px;
+  }
+
+  /* Mobile specific sizing */
+  .logo-wrapper:nth-child(1) img {
+    width: 90px;
+  }
+
+  .logo-wrapper:nth-child(2) img {
+    width: 90px; /* Elate mobile size - reduced */
+  }
+
+  .logo-wrapper:nth-child(3) img,
+  .logo-wrapper:nth-child(4) img,
+  .logo-wrapper:nth-child(5) img {
+    width: 120px;
+  }
+} 

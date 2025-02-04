@@ -1,0 +1,210 @@
+.why-us {
+  padding: var(--spacing-lg) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-us::before {
+  display: none;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 2rem;
+  color: white;
+  font-weight: 600;
+}
+
+.section-title em {
+  font-style: normal;
+  color: #FF5757;
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.intro-text strong {
+  color: white;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Glowing divider between columns */
+.comparison-grid::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  height: 80%;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(135, 88, 255, 0.3),
+    rgba(255, 88, 249, 0.3),
+    transparent
+  );
+  transform: translateX(-50%);
+  filter: blur(2px);
+}
+
+.comparison-column {
+  position: relative;
+  padding: 2rem;
+  border-radius: 24px;
+  background: rgba(28, 30, 44, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: visible;
+}
+
+/* Column headers */
+.comparison-column h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #fff 30%, rgba(255, 255, 255, 0.8));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glow effects */
+.comparison-column::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    rgba(135, 88, 255, 0.5),
+    rgba(255, 88, 249, 0.5)
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.comparison-column:hover::before {
+  opacity: 1;
+}
+
+/* List items styling */
+.comparison-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.comparison-column li {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideUp 0.5s forwards;
+}
+
+.comparison-column li:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Icon animations */
+.icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.negative .icon {
+  color: #FF5858;
+}
+
+.positive .icon {
+  color: #58FF8F;
+}
+
+.comparison-column li:hover .icon {
+  transform: scale(1.2);
+}
+
+/* Approach text styling */
+.approach {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Add animation delay for list items */
+.comparison-column li:nth-child(1) { animation-delay: 0.1s; }
+.comparison-column li:nth-child(2) { animation-delay: 0.2s; }
+.comparison-column li:nth-child(3) { animation-delay: 0.3s; }
+.comparison-column li:nth-child(4) { animation-delay: 0.4s; }
+.comparison-column li:nth-child(5) { animation-delay: 0.5s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .comparison-grid::before {
+    display: none;
+  }
+
+  .comparison-column li:hover {
+    transform: translateX(0);
+  }
+}
+
+/* Optimize for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .comparison-column,
+  .comparison-column li,
+  .icon {
+    animation: none;
+    transition: none;
+  }
+
+  .comparison-column li {
+    opacity: 1;
+    transform: none;
+  }
+} 

@@ -1,0 +1,108 @@
+.scale-fast {
+  padding: var(--spacing-xl) 0 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.scale-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  margin-bottom: 6rem;
+  color: white;
+  font-weight: 600;
+  line-height: 1.1;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.scale-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.ingredient-item h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.ingredient-item p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.iphone-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.iphone-preview img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+/* Floating animation for iPhone */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.iphone-preview img {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .scale-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .iphone-preview {
+    order: -1;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .scale-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  .ingredient-item h3 {
+    font-size: 1.5rem;
+  }
+
+  .ingredient-item p {
+    font-size: 1rem;
+  }
+}
+
+.scale-image {
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  height: auto;
+  object-fit: cover;
+  margin: 0 auto;
+} 

@@ -1,0 +1,116 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.navbar.scrolled {
+  background: rgba(28, 30, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-logo {
+  height: 32px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  cursor: pointer;
+}
+
+/* Standardized text styles */
+.brand-text,
+.nav-link,
+.comparison-text {  /* New class for comparison text items */
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap; /* Prevent text wrapping */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Button Styles */
+.btn {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8758FF 0%, #FF58F9 100%);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(135, 88, 255, 0.25);
+}
+
+/* Adjust spacing for mobile */
+@media (max-width: 1200px) {
+  .navbar-links {
+    gap: 1.5rem; /* Reduce gap between items */
+  }
+
+  .nav-link {
+    font-size: 0.9rem; /* Slightly smaller font on smaller screens */
+  }
+}
+
+/* Show hamburger menu earlier to prevent text wrapping */
+@media (max-width: 1024px) {
+  .navbar-links {
+    display: none; /* Hide links earlier */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+  
+  .navbar.scrolled {
+    background: rgba(28, 30, 42, 0.95);
+  }
+
+  .navbar-logo {
+    height: 28px;
+  }
+} 
