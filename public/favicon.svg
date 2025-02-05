@@ -11,14 +11,11 @@
   <!-- Dark background -->
   <rect width="32" height="32" rx="8" fill="#0B0B14"/>
   <!-- Logo mark -->
-  <g transform="translate(6,6)">
-    <!-- Three lines with rounded caps and gradient -->
-    <path d="M2 10 L18 10" stroke="url(#logoGradient)" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M2 6 L18 6" stroke="url(#logoGradient)" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M2 14 L18 14" stroke="url(#logoGradient)" stroke-width="2.5" stroke-linecap="round"/>
-    <!-- Subtle glow effect -->
-    <path d="M2 10 L18 10" stroke="url(#logoGradient)" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
-    <path d="M2 6 L18 6" stroke="url(#logoGradient)" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
-    <path d="M2 14 L18 14" stroke="url(#logoGradient)" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+  <g transform="translate(4,4)">
+    <!-- S shape -->
+    <path d="M6 12 C6 8, 18 16, 18 12" stroke="url(#logoGradient)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M6 18 C6 14, 18 22, 18 18" stroke="url(#logoGradient)" stroke-width="3" stroke-linecap="round"/>
+    <!-- O shape -->
+    <circle cx="12" cy="12" r="6" stroke="url(#logoGradient)" stroke-width="3" fill="none"/>
   </g>
 </svg> 
