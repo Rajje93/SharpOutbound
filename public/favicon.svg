@@ -3,14 +3,22 @@
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#8758FF" />
       <stop offset="100%" style="stop-color:#FF58F9" />
     </linearGradient>
   </defs>
-  <g>
-    <path d="M10 16 L22 16" stroke="url(#logoGradient)" stroke-width="3" stroke-linecap="round"/>
-    <path d="M10 12 L22 12" stroke="url(#logoGradient)" stroke-width="3" stroke-linecap="round"/>
-    <path d="M10 20 L22 20" stroke="url(#logoGradient)" stroke-width="3" stroke-linecap="round"/>
+  <!-- Dark background -->
+  <rect width="32" height="32" rx="8" fill="#0B0B14"/>
+  <!-- Logo mark -->
+  <g transform="translate(6,6)">
+    <!-- Three lines with rounded caps and gradient -->
+    <path d="M2 10 L18 10" stroke="url(#logoGradient)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M2 6 L18 6" stroke="url(#logoGradient)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M2 14 L18 14" stroke="url(#logoGradient)" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Subtle glow effect -->
+    <path d="M2 10 L18 10" stroke="url(#logoGradient)" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+    <path d="M2 6 L18 6" stroke="url(#logoGradient)" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+    <path d="M2 14 L18 14" stroke="url(#logoGradient)" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
   </g>
 </svg> 
