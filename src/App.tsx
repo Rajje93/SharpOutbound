@@ -27,10 +27,11 @@ function App() {
     // Use requestAnimationFrame for smoother animations
     requestAnimationFrame(() => {
       // Update parallax elements
-      document.querySelectorAll('.parallax-element').forEach((el) => {
-        const speed = (el as HTMLElement).dataset.speed || '0.2';
+      document.querySelectorAll('.parallax-element').forEach((el: Element) => {
+        const htmlEl = el as HTMLElement;
+        const speed = htmlEl.dataset.speed || '0.2';
         const yPos = -(scrollY * parseFloat(speed));
-        (el as HTMLElement).style.transform = `translateY(${yPos}px)`;
+        htmlEl.style.transform = `translateY(${yPos}px)`;
       });
 
       // Reveal elements on scroll
