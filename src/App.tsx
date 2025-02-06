@@ -28,10 +28,11 @@ function App() {
     requestAnimationFrame(() => {
       // Update parallax elements
       document.querySelectorAll('.parallax-element').forEach((el: Element) => {
-        const htmlEl = el as HTMLElement;
-        const speed = htmlEl.dataset.speed || '0.2';
-        const yPos = -(scrollY * parseFloat(speed));
-        htmlEl.style.transform = `translateY(${yPos}px)`;
+        if (el instanceof HTMLElement) {  // Type guard instead of type assertion
+          const speed = el.dataset.speed || '0.2';
+          const yPos = -(scrollY * parseFloat(speed));
+          el.style.transform = `translateY(${yPos}px)`;
+        }
       });
 
       // Reveal elements on scroll
