@@ -1,10 +1,10 @@
 :root {
-  --primary-gradient: linear-gradient(135deg, rgba(135, 88, 255, 0.95) 0%, rgba(255, 88, 249, 0.95) 100%);
-  --navy-dark: #0B0B14;
-  --navy-darker: #080810;
+  --primary-gradient: linear-gradient(135deg, #8758FF 0%, #9C4EFF 100%);
+  --navy-dark: #1C1E2A;
+  --navy-darker: #151722;
   --text-light: #CCCCCC;
-  --glow-purple: rgba(135, 88, 255, 0.15);
-  --glow-pink: rgba(255, 88, 249, 0.15);
+  --glow-purple: rgba(135, 88, 255, 0.6);
+  --glow-purple-light: rgba(156, 78, 255, 0.6);
   --mouse-x: 50%;
   --mouse-y: 50%;
   --glass-bg: rgba(28, 30, 44, 0.3);
@@ -31,7 +31,10 @@
 
 body {
   font-family: 'Inter', 'Poppins', sans-serif;
-  background: var(--navy-dark);
+  background: linear-gradient(145deg, 
+    rgba(0, 157, 255, 0.15) 0%,
+    rgba(0, 157, 255, 0.15) 100%
+  ), var(--navy-dark);
   color: white;
   line-height: 1.5;
   overflow-x: hidden;
@@ -67,7 +70,7 @@ body {
     ),
     radial-gradient(
       ellipse at 100% 50%,
-      var(--glow-pink) 0%,
+      var(--glow-purple-light) 0%,
       transparent 70%
     );
   pointer-events: none;
@@ -158,6 +161,7 @@ body {
   overflow: hidden;
 }
 
+/* Glowing orbs */
 .background-orbs::before,
 .background-orbs::after {
   content: '';
@@ -171,18 +175,35 @@ body {
 }
 
 .background-orbs::before {
-  background: radial-gradient(circle at center, #FF58F9, transparent 60%);
-  bottom: -10%;
-  right: -5%;
-  opacity: 0.8;
-  animation-delay: -5s;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 157, 255, 0.8) 0%,
+    transparent 50%
+  );
+  bottom: -15%;
+  left: -5%;
+  opacity: 1;
 }
 
 .background-orbs::after {
-  background: radial-gradient(circle at center, #FF58F9, transparent 60%);
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 157, 255, 0.8) 0%,
+    transparent 50%
+  );
   bottom: -15%;
-  left: -5%;
-  opacity: 0.7;
+  right: -5%;
+  opacity: 1;
+  animation-delay: -5s;
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 10px);
+  }
 }
 
 /* Mobile orbs - completely new approach */
@@ -200,13 +221,6 @@ body {
   .background-orbs::after {
     display: none;
   }
-}
-
-@keyframes orbFloat {
-  0%, 100% { transform: translate(0, 0); }
-  25% { transform: translate(5%, 5%); }
-  50% { transform: translate(0, 10%); }
-  75% { transform: translate(-5%, 5%); }
 }
 
 /* Tablet styles */
@@ -278,7 +292,7 @@ body {
 
 /* Primary Button with Enhanced Gradient */
 .btn-primary {
-  background: var(--primary-gradient);
+  background: linear-gradient(135deg, #8758FF 0%, #9C4EFF 100%);
   color: white;
   box-shadow: var(--btn-shadow), var(--btn-inset-shadow);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -290,8 +304,8 @@ body {
   inset: -1px;
   background: linear-gradient(
     135deg,
-    rgba(255, 88, 249, 0.5) 0%,
-    rgba(135, 88, 255, 0.5) 100%
+    rgba(135, 88, 255, 0.5) 0%,
+    rgba(156, 78, 255, 0.5) 100%
   );
   border-radius: inherit;
   opacity: 0;
@@ -303,9 +317,10 @@ body {
 .btn-primary:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 
-    0 12px 24px -6px rgba(135, 88, 255, 0.4),
+    0 12px 24px -6px rgba(0, 157, 255, 0.4),
     var(--btn-inset-shadow),
     var(--btn-glow);
+  background: linear-gradient(135deg, #9869FF 0%, #AD5FFF 100%);
 }
 
 .btn-primary:hover::before {
@@ -503,7 +518,7 @@ footer {
   background: linear-gradient(
     135deg,
     rgba(135, 88, 255, 0.5),
-    rgba(255, 88, 249, 0.5)
+    rgba(156, 78, 255, 0.5)
   );
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -648,4 +663,15 @@ html {
 .text-reveal.revealed {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   transform: translateY(0);
+}
+
+/* Update hover effects */
+.interactive-bg {
+  opacity: 0.8;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 88, 249, 0.4) 0%,
+    rgba(135, 88, 255, 0.2) 25%,
+    transparent 60%
+  );
 } 

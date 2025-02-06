@@ -50,7 +50,7 @@
   background: linear-gradient(
     135deg,
     rgba(135, 88, 255, 0.5),
-    rgba(255, 88, 249, 0.5)
+    rgba(255, 59, 59, 0.5)
   );
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box, 
@@ -71,7 +71,7 @@
   inset: -20px;
   background: radial-gradient(
     circle at center,
-    rgba(255, 88, 249, 0.15) 0%,
+    rgba(255, 59, 59, 0.15) 0%,
     rgba(135, 88, 255, 0.1) 40%,
     transparent 70%
   );

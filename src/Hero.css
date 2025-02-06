@@ -1,0 +1,18 @@
+.btn::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 59, 59, 0.5) 0%,
+    rgba(135, 88, 255, 0.5) 100%
+  );
+}
+
+.btn:hover::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 59, 59, 0.8) 0%,
+    rgba(135, 88, 255, 0.8) 100%
+  );
+  box-shadow: 
+    0 0 20px rgba(255, 59, 59, 0.4),
+    inset 0 0 20px rgba(135, 88, 255, 0.4);
+} 
