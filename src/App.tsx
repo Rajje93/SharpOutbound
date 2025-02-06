@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhyUs from './components/WhyUs';
@@ -18,16 +18,18 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      setScrolled(isScrolled);
-      setScrollY(window.scrollY);
-      
+  // Memoize scroll handler for better performance
+  const handleScroll = useCallback(() => {
+    const isScrolled = window.scrollY > 50;
+    setScrolled(isScrolled);
+    setScrollY(window.scrollY);
+    
+    // Use requestAnimationFrame for smoother animations
+    requestAnimationFrame(() => {
       // Update parallax elements
-      document.querySelectorAll('.parallax-element').forEach((el: any) => {
-        const speed = el.dataset.speed || 0.2;
-        const yPos = -(scrollY * speed);
+      document.querySelectorAll('.parallax-element').forEach((el: HTMLElement) => {
+        const speed = el.dataset.speed || '0.2';
+        const yPos = -(scrollY * parseFloat(speed));
         el.style.transform = `translateY(${yPos}px)`;
       });
 
@@ -40,26 +42,29 @@ function App() {
           el.classList.add('revealed');
         }
       });
-    };
+    });
+  }, [scrollY]);
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Optional: Add mouse movement effect
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+  // Memoize mouse move handler
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    requestAnimationFrame(() => {
       const x = (e.clientX / window.innerWidth) * 100;
       const y = (e.clientY / window.innerHeight) * 100;
       document.documentElement.style.setProperty('--mouse-x', `${x}%`);
       document.documentElement.style.setProperty('--mouse-y', `${y}%`);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    });
   }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
+    handleScroll(); // Initial check
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [handleScroll, handleMouseMove]);
 
   return (
     <div className="app-wrapper">
