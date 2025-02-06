@@ -11,14 +11,14 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 
-  /* Responsive spacing variables */
+  /* Spacing variables */
   --spacing-xs: clamp(0.5rem, 2vw, 1rem);
   --spacing-sm: clamp(1rem, 3vw, 1.5rem);
   --spacing-md: clamp(1.5rem, 4vw, 2rem);
   --spacing-lg: clamp(2rem, 6vw, 4rem);
   --spacing-xl: clamp(3rem, 8vw, 6rem);
 
-  /* Responsive typography */
+  /* Typography */
   --font-size-xs: clamp(0.75rem, 2vw, 0.875rem);
   --font-size-sm: clamp(0.875rem, 2.5vw, 1rem);
   --font-size-base: clamp(1rem, 3vw, 1.125rem);
@@ -62,12 +62,12 @@ body {
   background: 
     radial-gradient(
       ellipse at 0% 50%,
-      rgba(135, 88, 255, 0.15) 0%,
+      var(--glow-purple) 0%,
       transparent 70%
     ),
     radial-gradient(
       ellipse at 100% 50%,
-      rgba(255, 88, 249, 0.15) 0%,
+      var(--glow-pink) 0%,
       transparent 70%
     );
   pointer-events: none;
@@ -167,6 +167,7 @@ body {
   border-radius: 50%;
   filter: blur(80px);
   animation: orbFloat 20s infinite ease-in-out;
+  will-change: transform;
 }
 
 .background-orbs::before {
@@ -242,10 +243,8 @@ body {
   }
 }
 
-/* Enhanced Button Base Styles */
-.btn,
-button.primary,
-.cta-button {
+/* Base Button Styles */
+.btn {
   --btn-padding-y: 0.75rem;
   --btn-padding-x: 1.5rem;
   --btn-radius: 12px;
@@ -253,7 +252,7 @@ button.primary,
   --btn-glow: 0 0 20px rgba(135, 88, 255, 0.4);
   --btn-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2);
   --btn-inset-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
-  
+
   padding: var(--btn-padding-y) var(--btn-padding-x);
   border-radius: var(--btn-radius);
   font-weight: 600;
@@ -279,11 +278,7 @@ button.primary,
 
 /* Primary Button with Enhanced Gradient */
 .btn-primary {
-  background: linear-gradient(
-    135deg,
-    rgba(135, 88, 255, 1) 0%,
-    rgba(255, 88, 249, 1) 100%
-  );
+  background: var(--primary-gradient);
   color: white;
   box-shadow: var(--btn-shadow), var(--btn-inset-shadow);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -559,9 +554,17 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Better transitions */
+/* Keep only one transition definition */
 * {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Remove duplicate button transitions since we have the global one */
+.btn,
+.glass-effect,
+.hover-scale,
+.navbar {
+  /* Remove duplicate transitions */
 }
 
 /* Enhanced orb effects */
@@ -571,10 +574,11 @@ html {
   will-change: transform;
 }
 
-/* Improved hover effects */
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(135, 88, 255, 0.2);
+/* Combine all hover transforms */
+.btn:hover,
+.glass-effect:hover,
+.hover-scale:hover {
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* Better card animations */
