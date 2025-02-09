@@ -1,3 +1,6 @@
+/* Import Inter font with variable weights */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
 :root {
   --primary-gradient: linear-gradient(135deg, #8758FF 0%, #9C4EFF 100%);
   --navy-dark: #1C1E2A;
@@ -19,29 +22,82 @@
   --spacing-xl: clamp(3rem, 8vw, 6rem);
 
   /* Typography */
-  --font-size-xs: clamp(0.75rem, 2vw, 0.875rem);
-  --font-size-sm: clamp(0.875rem, 2.5vw, 1rem);
-  --font-size-base: clamp(1rem, 3vw, 1.125rem);
-  --font-size-lg: clamp(1.125rem, 3.5vw, 1.25rem);
-  --font-size-xl: clamp(1.25rem, 4vw, 1.5rem);
-  --font-size-2xl: clamp(1.5rem, 5vw, 2rem);
-  --font-size-3xl: clamp(2rem, 6vw, 3rem);
-  --font-size-4xl: clamp(2.5rem, 7vw, 4rem);
-
-  /* Darker background and theme colors */
-  --bg-dark: #0A0B14;  /* Darker background */
-  --bg-darker: #070810; /* Even darker for contrast */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --line-height-relaxed: 1.7;
+  --letter-spacing-wide: -0.02em;
+  
+  /* Font sizes */
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: clamp(1.5rem, 5vw, 2rem);
+  --text-3xl: clamp(2rem, 6vw, 2.5rem);
+  --text-4xl: clamp(2.5rem, 7vw, 3rem);
+  
+  /* Colors from earlier */
+  --bg-dark: #0A0B14;
+  --bg-darker: #070810;
   --text-primary: rgba(255, 255, 255, 0.9);
   --text-secondary: rgba(255, 255, 255, 0.7);
   --accent-blue: rgb(64, 161, 255);
 }
 
+/* Base typography */
 body {
-  font-family: 'Inter', 'Poppins', sans-serif;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-wide);
   background: var(--bg-dark);
   color: var(--text-primary);
-  line-height: 1.5;
   overflow-x: hidden;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: var(--text-3xl);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+}
+
+/* Body text */
+p {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Navigation and smaller text */
+.nav-text, .small-text {
+  font-size: var(--text-sm);
+  font-weight: 400;
+}
+
+/* Feature text */
+.feature-text {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+}
+
+/* Call to action text */
+.cta-text {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .app-wrapper {
