@@ -14,7 +14,7 @@ import CompareOptions from './components/CompareOptions';
 import ClientLogos from './components/ClientLogos';
 import CustomCursor from './components/CustomCursor';
 import { useCursorEffect } from './hooks/useCursorEffect';
-import ScrollAnimations from './components/ScrollAnimations';
+import { initScrollAnimations } from './utils/animations';
 import './App.css';
 
 function App() {
@@ -71,10 +71,13 @@ function App() {
 
   useCursorEffect();
 
+  useEffect(() => {
+    initScrollAnimations();
+  }, []);
+
   return (
     <>
       <CustomCursor />
-      <ScrollAnimations />
       <div className="app-wrapper">
         <div className="background-orbs" />
         <div className="grain" />

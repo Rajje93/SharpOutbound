@@ -45,6 +45,9 @@ body {
   background: var(--navy-dark);
   display: flex;
   flex-direction: column;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 /* Ensure all sections use the global background */
@@ -665,6 +668,17 @@ html {
     rgba(0, 157, 255, 0.8) 0%,
     transparent 60%
   );
+}
+
+/* Animation base styles */
+.animate-image, 
+.animate-text {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.animate-section {
+  overflow: hidden;
 }
 
 /* End of file */
