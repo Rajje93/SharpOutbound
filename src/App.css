@@ -208,21 +208,31 @@ body {
 /* ONLY change the mobile styles */
 @media (max-width: 768px) {
   .background-orbs::before {
-    width: 45vw;
-    height: 45vw;
-    top: 20%;  /* Move to top section */
-    left: -10%;
-    opacity: 0.7;
-    filter: blur(100px);
+    width: 60vw;  /* Slightly larger */
+    height: 60vw;
+    top: 30%;    /* More centered */
+    left: -5%;   /* More centered */
+    opacity: 0.9; /* Much brighter */
+    filter: blur(90px);
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 157, 255, 1) 0%, /* Full opacity blue */
+      transparent 65%
+    );
   }
 
   .background-orbs::after {
-    width: 45vw;
-    height: 45vw;
-    top: 20%;  /* Move to top section */
-    right: -10%;
-    opacity: 0.7;
-    filter: blur(100px);
+    width: 60vw;
+    height: 60vw;
+    top: 30%;
+    right: -5%;
+    opacity: 0.9;
+    filter: blur(90px);
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 157, 255, 1) 0%,
+      transparent 65%
+    );
   }
 }
 
