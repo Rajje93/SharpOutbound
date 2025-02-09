@@ -264,64 +264,45 @@ p {
 .background-orbs::after {
   content: '';
   position: absolute;
-  width: 25vw;
+  width: 25vw;  /* Even smaller circular shape */
   height: 25vw;
   border-radius: 50%;
-  filter: blur(65px);
-  opacity: 0.9;  /* Slightly reduced */
+  filter: blur(60px);  /* Less blur for smaller orbs */
   background: radial-gradient(
     circle at center,
-    rgba(64, 161, 255, 0.9) 0%,
-    rgba(64, 161, 255, 0.7) 30%,
-    rgba(64, 161, 255, 0.3) 60%,
-    transparent 80%
+    rgba(0, 89, 255, 1) 0%,
+    rgba(0, 89, 255, 0.5) 50%,
+    transparent 100%
   );
-  animation: float 6s ease-in-out infinite;
+  mix-blend-mode: screen;
 }
 
 .background-orbs::before {
-  bottom: -10%;
-  left: -2%;
+  bottom: -5%;   /* Just slightly peeking from bottom */
+  right: -2%;    /* Just slightly off the right edge */
+  opacity: 0.8;
+  z-index: -1;
 }
 
 .background-orbs::after {
-  bottom: -10%;
-  right: -2%;
-  animation-delay: -3s;
+  bottom: -5%;   /* Same level as right orb */
+  left: -2%;     /* Just slightly off the left edge */
+  opacity: 0.4;
+  z-index: -1;
 }
 
-/* Mobile styles */
+/* Mobile adjustments */
 @media (max-width: 768px) {
-  .background-orbs {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 20%;
-  }
-
   .background-orbs::before {
-    position: absolute;
-    width: 150vw;
-    height: 150vw;
-    top: 0;
-    left: -10%;
-    right: 0;
-    margin: 0 auto;
-    transform: translateY(20vh);
-    opacity: 0.6;
-    filter: blur(110px);
-    background: radial-gradient(
-      circle at center,
-      rgb(0, 157, 255) 0%,
-      rgba(0, 157, 255, 0.5) 40%,
-      rgba(0, 157, 255, 0.3) 70%,
-      transparent 90%
-    );
+    width: 35vw;  /* Smaller on mobile too */
+    height: 35vw;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.7;
+    filter: blur(70px);
   }
 
-  /* Hide second orb */
   .background-orbs::after {
     display: none;
   }
