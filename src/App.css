@@ -208,20 +208,19 @@ body {
 /* ONLY change the mobile styles */
 @media (max-width: 768px) {
   .background-orbs::before {
-    width: 120vw;  /* Bigger than viewport! */
-    height: 120vw;
-    top: 15%;     /* Higher up */
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 1;
-    filter: blur(50px);  /* Even less blur */
+    width: 100vw;  /* Match viewport width */
+    height: 100vw;
+    top: 20%;
+    left: 0;      /* Align to left edge */
+    transform: none;
+    opacity: 0.9;  /* Slightly reduced */
+    filter: blur(60px);
     background: radial-gradient(
       circle at center,
-      rgb(80, 180, 255) 0%,    /* Brighter blue */
-      rgb(0, 157, 255) 20%,    /* Original blue */
-      rgba(0, 157, 255, 0.9) 40%,
-      rgba(0, 157, 255, 0.7) 60%,
-      rgba(0, 157, 255, 0.4) 80%,
+      rgb(40, 150, 255) 0%,    /* Less bright blue */
+      rgba(0, 157, 255, 0.8) 30%,
+      rgba(0, 157, 255, 0.6) 60%,
+      rgba(0, 157, 255, 0.3) 80%,
       transparent 90%
     );
     mix-blend-mode: screen;
@@ -229,20 +228,20 @@ body {
   }
 
   .background-orbs::after {
-    width: 120vw;
-    height: 120vw;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-10%);
-    opacity: 1;
-    filter: blur(50px);
+    width: 100vw;
+    height: 100vw;
+    top: 20%;
+    right: 0;     /* Align to right edge */
+    left: auto;   /* Remove left positioning */
+    transform: none;
+    opacity: 0.9;
+    filter: blur(60px);
     background: radial-gradient(
       circle at center,
-      rgb(80, 180, 255) 0%,
-      rgb(0, 157, 255) 20%,
-      rgba(0, 157, 255, 0.9) 40%,
-      rgba(0, 157, 255, 0.7) 60%,
-      rgba(0, 157, 255, 0.4) 80%,
+      rgb(40, 150, 255) 0%,
+      rgba(0, 157, 255, 0.8) 30%,
+      rgba(0, 157, 255, 0.6) 60%,
+      rgba(0, 157, 255, 0.3) 80%,
       transparent 90%
     );
     mix-blend-mode: screen;
