@@ -202,23 +202,22 @@ body {
     padding-top: 20%;
   }
 
-  /* Position the orb absolutely within the centered container */
   .background-orbs::before {
     position: absolute;
-    width: 130vw;  /* Larger width */
-    height: 130vw;  /* Larger height */
+    width: 130vw;
+    height: 130vw;
     top: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
-    transform: none;
-    opacity: 0.6;  /* Slightly brighter */
-    filter: blur(110px);  /* Slightly less blur for more intensity */
+    transform: translateY(20vh);
+    opacity: 0.6;
+    filter: blur(110px);
     background: radial-gradient(
       circle at center,
       rgb(0, 157, 255) 0%,
-      rgba(0, 157, 255, 0.5) 40%,  /* Brighter middle */
-      rgba(0, 157, 255, 0.3) 70%,  /* Brighter outer */
+      rgba(0, 157, 255, 0.5) 40%,
+      rgba(0, 157, 255, 0.3) 70%,
       transparent 90%
     );
   }
