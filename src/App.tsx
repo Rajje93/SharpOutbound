@@ -12,7 +12,6 @@ import Stats from './components/Stats';
 import ScaleFast from './components/ScaleFast';
 import CompareOptions from './components/CompareOptions';
 import ClientLogos from './components/ClientLogos';
-import { initScrollAnimations } from './utils/animations';
 import './App.css';
 
 function App() {
@@ -66,10 +65,6 @@ function App() {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [handleScroll, handleMouseMove]);
-
-  useEffect(() => {
-    initScrollAnimations();
-  }, []);
 
   return (
     <div className="app-wrapper">
