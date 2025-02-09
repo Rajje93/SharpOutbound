@@ -193,14 +193,13 @@ body {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  /* Reset the container first */
   .background-orbs {
     position: fixed;
     inset: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 20%;
+    padding-top: 30%;
   }
 
   /* Position the orb absolutely within the centered container */
