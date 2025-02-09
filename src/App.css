@@ -161,37 +161,42 @@ body {
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .background-orbs::before,
 .background-orbs::after {
   content: '';
   position: absolute;
-  width: 50vw;
-  height: 50vw;
+  width: 80vw;  /* Much larger */
+  height: 80vw; /* Much larger */
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.7;
+  filter: blur(150px); /* More blur */
+  opacity: 0.8;  /* More visible */
   background: radial-gradient(
     circle at center,
-    rgba(0, 157, 255, 0.9) 0%,
+    rgba(0, 157, 255, 1) 0%,  /* Full opacity at center */
     transparent 70%
   );
   animation: float 6s ease-in-out infinite;
 }
 
 .background-orbs::before {
-  top: 20%;
-  left: 10%;
+  top: 50%;  /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
 }
 
 .background-orbs::after {
-  top: 20%;
-  right: 10%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(20vw); /* Offset second orb */
   animation-delay: -3s;
   background: radial-gradient(
     circle at center,
-    rgba(0, 157, 255, 0.8) 0%,
+    rgba(0, 157, 255, 0.9) 0%,
     transparent 70%
   );
 }
@@ -209,20 +214,10 @@ body {
 @media (max-width: 768px) {
   .background-orbs::before,
   .background-orbs::after {
-    width: 70vw;
-    height: 70vw;
-    opacity: 0.6;
-    filter: blur(120px);
-  }
-
-  .background-orbs::before {
-    top: 15%;
-    left: 5%;
-  }
-
-  .background-orbs::after {
-    top: 15%;
-    right: 5%;
+    width: 100vw;  /* Full width on mobile */
+    height: 100vw;
+    opacity: 0.7;
+    filter: blur(180px);
   }
 }
 
