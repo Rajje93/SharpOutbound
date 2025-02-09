@@ -167,27 +167,27 @@ body {
 .background-orbs::after {
   content: '';
   position: absolute;
-  width: 35vw;
-  height: 35vw;
+  width: 25vw;
+  height: 25vw;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.7;
+  filter: blur(70px);
+  opacity: 0.8;
   background: radial-gradient(
     circle at center,
-    rgba(0, 157, 255, 0.9) 0%,
+    rgba(0, 157, 255, 1) 0%,
     transparent 60%
   );
   animation: float 6s ease-in-out infinite;
 }
 
 .background-orbs::before {
-  bottom: -15%;
-  left: -5%;
+  bottom: -10%;
+  left: -2%;
 }
 
 .background-orbs::after {
-  bottom: -15%;
-  right: -5%;
+  bottom: -10%;
+  right: -2%;
   animation-delay: -3s;
 }
 
