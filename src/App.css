@@ -297,17 +297,17 @@ p {
   .background-orbs::before {
     width: 150vw;
     height: 150vw;
-    bottom: -40%;
+    top: 20%;  /* Back to positioning from top instead of bottom */
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0.4;
-    filter: blur(120px);
+    opacity: 0.6;  /* Increased opacity for more visibility */
+    filter: blur(110px);
     background: radial-gradient(
       circle at center,
       rgba(56, 115, 255, 1) 0%,
-      rgba(56, 115, 255, 0.6) 40%,
-      rgba(56, 115, 255, 0.2) 70%,
-      transparent 100%
+      rgba(56, 115, 255, 0.8) 30%,  /* Brighter middle */
+      rgba(56, 115, 255, 0.4) 60%,  /* Brighter outer */
+      transparent 85%
     );
   }
 
