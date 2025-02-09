@@ -207,29 +207,18 @@ body {
 
 /* ONLY change the mobile styles */
 @media (max-width: 768px) {
-  .background-orbs::before {
-    width: 90vw;
-    height: 90vw;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.5;  /* Softer */
-    filter: blur(120px);  /* More blur */
-    background: radial-gradient(
-      circle at center,
-      rgb(0, 157, 255) 0%,
-      rgba(0, 157, 255, 0.4) 40%,
-      rgba(0, 157, 255, 0.2) 70%,
-      transparent 90%
-    );
+  .background-orbs {
+    position: fixed;
+    overflow: visible; /* Allow orbs to overflow */
   }
 
-  .background-orbs::after {
+  .background-orbs::before,
+  .background-orbs::after,
+  .background-orbs::before:last-child {
+    content: '';
+    position: absolute;
     width: 90vw;
     height: 90vw;
-    top: 25%;  /* Slightly offset from first orb */
-    left: 50%;
-    transform: translateX(-50%);
     opacity: 0.5;
     filter: blur(120px);
     background: radial-gradient(
@@ -239,6 +228,28 @@ body {
       rgba(0, 157, 255, 0.2) 70%,
       transparent 90%
     );
+  }
+
+  /* Right orb */
+  .background-orbs::before {
+    top: 20%;
+    right: -20%;
+    transform: none;
+  }
+
+  /* Left orb */
+  .background-orbs::after {
+    top: 40%;
+    left: -20%;
+    transform: none;
+  }
+
+  /* Add a third orb with pseudo-element */
+  .background-orbs::before:last-child {
+    content: '';
+    bottom: 10%;
+    left: 30%;
+    transform: none;
   }
 }
 
