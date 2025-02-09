@@ -206,20 +206,20 @@ body {
   /* Position the orb absolutely within the centered container */
   .background-orbs::before {
     position: absolute;
-    width: 100vw;
-    height: 100vw;
+    width: 130vw;  /* Larger width */
+    height: 130vw;  /* Larger height */
     top: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
     transform: none;
-    opacity: 0.5;
-    filter: blur(120px);
+    opacity: 0.6;  /* Slightly brighter */
+    filter: blur(110px);  /* Slightly less blur for more intensity */
     background: radial-gradient(
       circle at center,
       rgb(0, 157, 255) 0%,
-      rgba(0, 157, 255, 0.4) 40%,
-      rgba(0, 157, 255, 0.2) 70%,
+      rgba(0, 157, 255, 0.5) 40%,  /* Brighter middle */
+      rgba(0, 157, 255, 0.3) 70%,  /* Brighter outer */
       transparent 90%
     );
   }
