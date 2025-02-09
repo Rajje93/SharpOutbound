@@ -208,31 +208,39 @@ body {
 /* ONLY change the mobile styles */
 @media (max-width: 768px) {
   .background-orbs::before {
-    width: 60vw;  /* Slightly larger */
-    height: 60vw;
-    top: 30%;    /* More centered */
-    left: -5%;   /* More centered */
-    opacity: 0.9; /* Much brighter */
-    filter: blur(90px);
+    width: 80vw;  /* Even larger */
+    height: 80vw;
+    top: 25%;    /* Slightly higher */
+    left: 50%;   /* Center horizontally */
+    transform: translateX(-50%); /* Perfect centering */
+    opacity: 1;   /* Full opacity */
+    filter: blur(60px); /* Less blur for more intensity */
     background: radial-gradient(
       circle at center,
-      rgba(0, 157, 255, 1) 0%, /* Full opacity blue */
-      transparent 65%
+      rgb(0, 157, 255) 0%,     /* Pure blue */
+      rgba(0, 157, 255, 0.8) 30%,
+      rgba(0, 157, 255, 0.4) 60%,
+      transparent 80%
     );
+    mix-blend-mode: screen; /* Makes it extra glowy */
   }
 
   .background-orbs::after {
-    width: 60vw;
-    height: 60vw;
-    top: 30%;
-    right: -5%;
-    opacity: 0.9;
-    filter: blur(90px);
+    width: 80vw;
+    height: 80vw;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20%); /* Offset from first orb */
+    opacity: 1;
+    filter: blur(60px);
     background: radial-gradient(
       circle at center,
-      rgba(0, 157, 255, 1) 0%,
-      transparent 65%
+      rgb(0, 157, 255) 0%,
+      rgba(0, 157, 255, 0.8) 30%,
+      rgba(0, 157, 255, 0.4) 60%,
+      transparent 80%
     );
+    mix-blend-mode: screen;
   }
 }
 
