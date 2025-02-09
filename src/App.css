@@ -170,12 +170,14 @@ body {
   width: 25vw;
   height: 25vw;
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.8;
+  filter: blur(65px);
+  opacity: 1;
   background: radial-gradient(
     circle at center,
-    rgba(0, 157, 255, 1) 0%,
-    transparent 60%
+    rgb(64, 161, 255) 0%,
+    rgba(64, 161, 255, 0.8) 30%,
+    rgba(64, 161, 255, 0.4) 60%,
+    transparent 80%
   );
   animation: float 6s ease-in-out infinite;
 }
