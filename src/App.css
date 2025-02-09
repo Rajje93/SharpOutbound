@@ -204,8 +204,8 @@ body {
 
   .background-orbs::before {
     position: absolute;
-    width: 130vw;
-    height: 130vw;
+    width: 150vw;
+    height: 150vw;
     top: 0;
     left: 0;
     right: 0;
