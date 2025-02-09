@@ -193,14 +193,26 @@ body {
 
 /* Mobile styles */
 @media (max-width: 768px) {
+  /* Reset the container first */
+  .background-orbs {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20%;
+  }
+
+  /* Position the orb absolutely within the centered container */
   .background-orbs::before {
-    width: 120vw;
-    height: 120vw;
-    top: 20%;
-    left: 50%;
-    right: auto;  /* Remove any right positioning */
-    bottom: auto; /* Remove any bottom positioning */
-    transform: translateX(-50%);
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: none;
     opacity: 0.5;
     filter: blur(120px);
     background: radial-gradient(
@@ -212,6 +224,7 @@ body {
     );
   }
 
+  /* Hide second orb */
   .background-orbs::after {
     display: none;
   }
