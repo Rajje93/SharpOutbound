@@ -208,43 +208,40 @@ body {
 /* ONLY change the mobile styles */
 @media (max-width: 768px) {
   .background-orbs::before {
-    width: 100vw;  /* Match viewport width */
-    height: 100vw;
+    width: 90vw;  /* Slightly smaller */
+    height: 90vw;
     top: 20%;
-    left: 0;      /* Align to left edge */
-    transform: none;
-    opacity: 0.9;  /* Slightly reduced */
-    filter: blur(60px);
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    opacity: 0.8;  /* Less bright */
+    filter: blur(70px); /* More blur = softer */
     background: radial-gradient(
       circle at center,
-      rgb(40, 150, 255) 0%,    /* Less bright blue */
-      rgba(0, 157, 255, 0.8) 30%,
-      rgba(0, 157, 255, 0.6) 60%,
-      rgba(0, 157, 255, 0.3) 80%,
+      rgb(0, 157, 255) 0%,
+      rgba(0, 157, 255, 0.7) 40%,
+      rgba(0, 157, 255, 0.3) 70%,
       transparent 90%
     );
-    mix-blend-mode: screen;
+    mix-blend-mode: normal; /* Remove extra brightness */
     z-index: 0;
   }
 
   .background-orbs::after {
-    width: 100vw;
-    height: 100vw;
+    width: 90vw;
+    height: 90vw;
     top: 20%;
-    right: 0;     /* Align to right edge */
-    left: auto;   /* Remove left positioning */
-    transform: none;
-    opacity: 0.9;
-    filter: blur(60px);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.8;
+    filter: blur(70px);
     background: radial-gradient(
       circle at center,
-      rgb(40, 150, 255) 0%,
-      rgba(0, 157, 255, 0.8) 30%,
-      rgba(0, 157, 255, 0.6) 60%,
-      rgba(0, 157, 255, 0.3) 80%,
+      rgb(0, 157, 255) 0%,
+      rgba(0, 157, 255, 0.7) 40%,
+      rgba(0, 157, 255, 0.3) 70%,
       transparent 90%
     );
-    mix-blend-mode: screen;
+    mix-blend-mode: normal;
     z-index: 0;
   }
 }
