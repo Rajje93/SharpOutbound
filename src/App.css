@@ -173,7 +173,7 @@ body {
   background: radial-gradient(
     circle at center,
     rgba(0, 157, 255, 0.8) 0%,
-    transparent 50%
+    transparent 60%
   );
 }
 
@@ -647,7 +647,24 @@ html {
     circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
     rgba(255, 88, 249, 0.4) 0%,
     rgba(135, 88, 255, 0.2) 25%,
+    transparent 50%
+  );
+}
+
+/* Update the orbs to blue */
+.background-orbs::before,
+.background-orbs::after {
+  content: '';
+  position: absolute;
+  width: 35vw;
+  height: 35vw;
+  border-radius: 50%;
+  filter: blur(80px);
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 157, 255, 0.8) 0%,
     transparent 60%
   );
-} / *   T r i g g e r   r e b u i l d   * /  
- 
+}
+
+/* End of file */
