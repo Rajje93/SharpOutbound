@@ -264,30 +264,31 @@ p {
 .background-orbs::after {
   content: '';
   position: absolute;
-  width: 25vw;  /* Even smaller circular shape */
+  width: 25vw;
   height: 25vw;
   border-radius: 50%;
-  filter: blur(60px);  /* Less blur for smaller orbs */
+  filter: blur(60px);
   background: radial-gradient(
     circle at center,
-    rgba(0, 89, 255, 1) 0%,
-    rgba(0, 89, 255, 0.5) 50%,
+    rgba(56, 115, 255, 1) 0%,    /* More vibrant blue */
+    rgba(56, 115, 255, 0.6) 40%, /* Adjusted middle opacity */
+    rgba(56, 115, 255, 0.2) 70%, /* Softer outer glow */
     transparent 100%
   );
   mix-blend-mode: screen;
 }
 
 .background-orbs::before {
-  bottom: -5%;   /* Just slightly peeking from bottom */
-  right: -2%;    /* Just slightly off the right edge */
-  opacity: 0.8;
+  bottom: -5%;
+  right: -2%;
+  opacity: 0.9;  /* Brighter right orb */
   z-index: -1;
 }
 
 .background-orbs::after {
-  bottom: -5%;   /* Same level as right orb */
-  left: -2%;     /* Just slightly off the left edge */
-  opacity: 0.4;
+  bottom: -5%;
+  left: -2%;
+  opacity: 0.3;  /* Dimmer left orb */
   z-index: -1;
 }
 
