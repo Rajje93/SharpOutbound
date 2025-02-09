@@ -1,5 +1,5 @@
 /* Import Inter font with variable weights */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   --primary-gradient: linear-gradient(135deg, #8758FF 0%, #9C4EFF 100%);
@@ -23,17 +23,18 @@
 
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --line-height-relaxed: 1.7;
-  --letter-spacing-wide: -0.02em;
+  --line-height-tight: 1.1;
+  --line-height-relaxed: 1.65;
+  --letter-spacing-wide: -0.03em;
   
-  /* Font sizes */
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: clamp(1.5rem, 5vw, 2rem);
-  --text-3xl: clamp(2rem, 6vw, 2.5rem);
-  --text-4xl: clamp(2.5rem, 7vw, 3rem);
+  /* Font sizes - back to original large size */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.5rem;      /* 24px */
+  --text-2xl: clamp(2rem, 5vw, 2.25rem);
+  --text-3xl: clamp(2.5rem, 6vw, 3.25rem);
+  --text-4xl: clamp(3.25rem, 7vw, 4.25rem);
   
   /* Colors from earlier */
   --bg-dark: #0A0B14;
@@ -57,21 +58,24 @@ body {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
-  line-height: 1.2;
+  line-height: var(--line-height-tight);
   letter-spacing: -0.03em;
 }
 
 h1 {
   font-size: var(--text-4xl);
   font-weight: 600;
+  line-height: var(--line-height-tight);
 }
 
 h2 {
   font-size: var(--text-3xl);
+  line-height: var(--line-height-tight);
 }
 
 h3 {
   font-size: var(--text-2xl);
+  line-height: var(--line-height-tight);
 }
 
 /* Body text */
@@ -90,7 +94,7 @@ p {
 /* Feature text */
 .feature-text {
   font-size: var(--text-lg);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* Call to action text */
@@ -747,4 +751,20 @@ h1, h2, h3 {
 
 p, span {
   color: var(--text-secondary);
+}
+
+/* Hero text specific adjustment */
+.hero-title {
+  font-family: var(--font-primary);
+  font-size: clamp(3.25rem, 7vw, 4.25rem);
+  font-weight: 700;  /* Bolder weight */
+  line-height: 1.1;
+  letter-spacing: -0.04em;  /* Even tighter tracking for hero */
+  color: rgba(255, 255, 255, 0.95);  /* Slightly softer white */
+}
+
+.hero-subtitle {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: -0.01em;
 }
