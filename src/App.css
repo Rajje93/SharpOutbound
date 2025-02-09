@@ -213,8 +213,8 @@ body {
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0.5;
-    filter: blur(120px);
+    opacity: 0.5;  /* Softer */
+    filter: blur(120px);  /* More blur */
     background: radial-gradient(
       circle at center,
       rgb(0, 157, 255) 0%,
@@ -222,14 +222,12 @@ body {
       rgba(0, 157, 255, 0.2) 70%,
       transparent 90%
     );
-    mix-blend-mode: normal;
-    z-index: 0;
   }
 
   .background-orbs::after {
     width: 90vw;
     height: 90vw;
-    top: 20%;
+    top: 25%;  /* Slightly offset from first orb */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0.5;
@@ -241,8 +239,6 @@ body {
       rgba(0, 157, 255, 0.2) 70%,
       transparent 90%
     );
-    mix-blend-mode: normal;
-    z-index: 0;
   }
 }
 
