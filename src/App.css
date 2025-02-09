@@ -154,7 +154,8 @@ body {
 
 /* Main background orbs */
 .background-orbs {
-  position: absolute;
+  position: fixed;
+  inset: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -174,7 +175,7 @@ body {
   opacity: 0.5;
   background: radial-gradient(
     circle at center,
-    rgba(135, 88, 255, 0.8) 0%,
+    rgba(0, 157, 255, 0.8) 0%,
     transparent 60%
   );
   animation: float 6s ease-in-out infinite;
@@ -184,7 +185,7 @@ body {
 .background-orbs::after {
   background: radial-gradient(
     circle at center,
-    rgba(255, 88, 249, 0.6) 0%,
+    rgba(0, 157, 255, 0.6) 0%,
     transparent 60%
   );
 }
@@ -211,18 +212,16 @@ body {
 
 /* Mobile orbs - completely new approach */
 @media (max-width: 768px) {
-  .background-orbs {
-    background: radial-gradient(circle at center, #FF58F9, transparent 70%);
-    opacity: 0.4;
-    filter: blur(100px);
-  }
-
-  .background-orbs::before {
-    display: none;
-  }
-
+  .background-orbs::before,
   .background-orbs::after {
-    display: none;
+    width: 50vw;
+    height: 50vw;
+    opacity: 0.4;
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 157, 255, 0.8) 0%,
+      transparent 60%
+    );
   }
 }
 

@@ -67,27 +67,29 @@ function App() {
   }, [handleScroll, handleMouseMove]);
 
   return (
-    <div className="app-wrapper">
+    <>
       <div className="background-orbs"></div>
-      <div className="grain" />
-      <div className="app">
-        <Navbar scrolled={scrolled} />
-        <main className="parallax-wrapper">
-          <Hero />
-          <Stats />
-          <ClientLogos />
-          <WhyUs />
-          <ConnectClients />
-          <CaseStudies />
-          <ScaleFast />
-          <CompareOptions />
-          <HowWeWork />
-          <Pricing />
-          <FAQ />
-        </main>
-        <Footer />
+      <div className="app-wrapper">
+        <div className="grain" />
+        <div className="app">
+          <Navbar scrolled={scrolled} />
+          <main className="parallax-wrapper">
+            <Hero />
+            <Stats />
+            <ClientLogos />
+            <WhyUs />
+            <ConnectClients />
+            <CaseStudies />
+            <ScaleFast />
+            <CompareOptions />
+            <HowWeWork />
+            <Pricing />
+            <FAQ />
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
