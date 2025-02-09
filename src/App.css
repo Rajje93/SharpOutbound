@@ -157,48 +157,43 @@ body {
   position: fixed;
   inset: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
 }
 
-/* Glowing orbs */
 .background-orbs::before,
 .background-orbs::after {
   content: '';
   position: absolute;
-  width: 35vw;
-  height: 35vw;
+  width: 50vw;
+  height: 50vw;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.5;
+  filter: blur(100px);
+  opacity: 0.7;
   background: radial-gradient(
     circle at center,
-    rgba(0, 157, 255, 0.8) 0%,
-    transparent 60%
+    rgba(0, 157, 255, 0.9) 0%,
+    transparent 70%
   );
   animation: float 6s ease-in-out infinite;
 }
 
-/* Add a second gradient for more glow */
+.background-orbs::before {
+  top: 20%;
+  left: 10%;
+}
+
 .background-orbs::after {
+  top: 20%;
+  right: 10%;
+  animation-delay: -3s;
   background: radial-gradient(
     circle at center,
-    rgba(0, 157, 255, 0.6) 0%,
-    transparent 60%
+    rgba(0, 157, 255, 0.8) 0%,
+    transparent 70%
   );
-}
-
-.background-orbs::before {
-  bottom: -15%;
-  left: -5%;
-}
-
-.background-orbs::after {
-  bottom: -15%;
-  right: -5%;
-  animation-delay: -3s;
 }
 
 @keyframes float {
@@ -210,18 +205,24 @@ body {
   }
 }
 
-/* Mobile orbs - completely new approach */
+/* Mobile styles */
 @media (max-width: 768px) {
   .background-orbs::before,
   .background-orbs::after {
-    width: 50vw;
-    height: 50vw;
-    opacity: 0.4;
-    background: radial-gradient(
-      circle at center,
-      rgba(0, 157, 255, 0.8) 0%,
-      transparent 60%
-    );
+    width: 70vw;
+    height: 70vw;
+    opacity: 0.6;
+    filter: blur(120px);
+  }
+
+  .background-orbs::before {
+    top: 15%;
+    left: 5%;
+  }
+
+  .background-orbs::after {
+    top: 15%;
+    right: 5%;
   }
 }
 
