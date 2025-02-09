@@ -5,7 +5,6 @@ import {
   FaDollarSign, 
   FaClock, 
   FaCreditCard,
-  FaRocket,
   FaShieldAlt
 } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';

@@ -1,7 +1,6 @@
 import React from 'react';
 import './Pricing.css';
-import { FaCheck } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Pricing = () => {
   const plans = [
