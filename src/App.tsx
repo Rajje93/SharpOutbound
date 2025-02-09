@@ -68,7 +68,7 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <div className="background-orbs" />
+      <div className="background-orbs"></div>
       <div className="grain" />
       <div className="app">
         <Navbar scrolled={scrolled} />
