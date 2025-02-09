@@ -213,12 +213,12 @@ body {
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0.6;  /* Even less opacity */
-    filter: blur(100px); /* Much more blur */
+    opacity: 0.5;
+    filter: blur(120px);
     background: radial-gradient(
       circle at center,
       rgb(0, 157, 255) 0%,
-      rgba(0, 157, 255, 0.5) 40%,
+      rgba(0, 157, 255, 0.4) 40%,
       rgba(0, 157, 255, 0.2) 70%,
       transparent 90%
     );
@@ -232,12 +232,12 @@ body {
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0.6;
-    filter: blur(100px);
+    opacity: 0.5;
+    filter: blur(120px);
     background: radial-gradient(
       circle at center,
       rgb(0, 157, 255) 0%,
-      rgba(0, 157, 255, 0.5) 40%,
+      rgba(0, 157, 255, 0.4) 40%,
       rgba(0, 157, 255, 0.2) 70%,
       transparent 90%
     );
