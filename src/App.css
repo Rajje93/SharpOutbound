@@ -152,7 +152,7 @@ body {
   --mouse-y: 50%;
 }
 
-/* Main background orbs */
+/* Main background orbs - Desktop */
 .background-orbs {
   position: fixed;
   inset: 0;
@@ -167,7 +167,7 @@ body {
 .background-orbs::after {
   content: '';
   position: absolute;
-  width: 35vw;  /* Back to original size */
+  width: 35vw;
   height: 35vw;
   border-radius: 50%;
   filter: blur(80px);
@@ -189,29 +189,17 @@ body {
   bottom: -15%;
   right: -5%;
   animation-delay: -3s;
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 157, 255, 0.6) 0%,
-    transparent 60%
-  );
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-/* ONLY change the mobile styles */
+/* Mobile styles */
 @media (max-width: 768px) {
   .background-orbs::before {
-    width: 120vw;  /* Make it extra large */
+    width: 120vw;
     height: 120vw;
     top: 20%;
     left: 50%;
+    right: auto;  /* Remove any right positioning */
+    bottom: auto; /* Remove any bottom positioning */
     transform: translateX(-50%);
     opacity: 0.5;
     filter: blur(120px);
@@ -224,7 +212,6 @@ body {
     );
   }
 
-  /* Remove the second orb on mobile */
   .background-orbs::after {
     display: none;
   }
