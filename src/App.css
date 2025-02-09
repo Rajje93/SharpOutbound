@@ -174,10 +174,19 @@ body {
   opacity: 0.5;
   background: radial-gradient(
     circle at center,
-    rgba(0, 157, 255, 0.8) 0%,
+    rgba(135, 88, 255, 0.8) 0%,
     transparent 60%
   );
   animation: float 6s ease-in-out infinite;
+}
+
+/* Add a second gradient for more glow */
+.background-orbs::after {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 88, 249, 0.6) 0%,
+    transparent 60%
+  );
 }
 
 .background-orbs::before {
@@ -285,7 +294,7 @@ body {
 }
 
 /* Primary Button with Enhanced Gradient */
-.btn-primary {
+.btn.btn-primary {
   background: linear-gradient(92.23deg, #6B4BF6 21.43%, #8C5FFF 76.89%);
   border-radius: 100px;
   padding: 8px 24px;
@@ -297,7 +306,7 @@ body {
   white-space: nowrap;
 }
 
-.btn-primary:hover {
+.btn.btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0px 8px 20px rgba(107, 75, 246, 0.3);
   background: linear-gradient(92.23deg, #7655FF 21.43%, #9D75FF 76.89%);
@@ -379,10 +388,19 @@ body {
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
-  .btn-mobile-full {
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.5rem;
+  .btn.btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Maximum width to maintain readability */
+    margin: 0 auto; /* Center the button */
+  }
+
+  .background-orbs::before,
+  .background-orbs::after {
+    width: 50vw; /* Larger orbs on mobile */
+    height: 50vw;
+    opacity: 0.4; /* Slightly reduced opacity */
   }
 
   .btn,
