@@ -12,6 +12,8 @@ import Stats from './components/Stats';
 import ScaleFast from './components/ScaleFast';
 import CompareOptions from './components/CompareOptions';
 import ClientLogos from './components/ClientLogos';
+import CustomCursor from './components/CustomCursor';
+import { useCursorEffect } from './hooks/useCursorEffect';
 import './App.css';
 
 function App() {
@@ -66,28 +68,33 @@ function App() {
     };
   }, [handleScroll, handleMouseMove]);
 
+  useCursorEffect();
+
   return (
-    <div className="app-wrapper">
-      <div className="background-orbs" />
-      <div className="grain" />
-      <div className="app">
-        <Navbar scrolled={scrolled} />
-        <main className="parallax-wrapper">
-          <Hero />
-          <Stats />
-          <ClientLogos />
-          <WhyUs />
-          <ConnectClients />
-          <CaseStudies />
-          <ScaleFast />
-          <CompareOptions />
-          <HowWeWork />
-          <Pricing />
-          <FAQ />
-        </main>
-        <Footer />
+    <>
+      <CustomCursor />
+      <div className="app-wrapper">
+        <div className="background-orbs" />
+        <div className="grain" />
+        <div className="app">
+          <Navbar scrolled={scrolled} />
+          <main className="parallax-wrapper">
+            <Hero />
+            <Stats />
+            <ClientLogos />
+            <WhyUs />
+            <ConnectClients />
+            <CaseStudies />
+            <ScaleFast />
+            <CompareOptions />
+            <HowWeWork />
+            <Pricing />
+            <FAQ />
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

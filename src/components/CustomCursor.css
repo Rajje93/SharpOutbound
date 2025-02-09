@@ -1,0 +1,33 @@
+.custom-cursor {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(135, 88, 255, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.2s;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #8758FF;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* Hover effects */
+.link-hover .custom-cursor {
+  transform: scale(1.5);
+  background: rgba(135, 88, 255, 0.1);
+  border-color: rgba(135, 88, 255, 0.8);
+}
+
+.link-hover .cursor-dot {
+  transform: scale(0.5);
+} 
