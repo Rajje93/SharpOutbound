@@ -295,18 +295,18 @@ p {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .background-orbs::before {
-    width: 150vw;
-    height: 150vw;
-    top: 20%;  /* Back to positioning from top instead of bottom */
+    width: 200vw;  /* Much larger */
+    height: 200vw;
+    top: 20%;  /* Keep at top */
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0.6;  /* Increased opacity for more visibility */
-    filter: blur(110px);
+    opacity: 0.7;  /* More visible */
+    filter: blur(120px);
     background: radial-gradient(
       circle at center,
-      rgba(56, 115, 255, 1) 0%,
-      rgba(56, 115, 255, 0.8) 30%,  /* Brighter middle */
-      rgba(56, 115, 255, 0.4) 60%,  /* Brighter outer */
+      rgba(56, 115, 255, 1) 0%,    /* More intense blue */
+      rgba(56, 115, 255, 0.8) 30%, /* Brighter middle */
+      rgba(56, 115, 255, 0.4) 60%, /* Brighter outer */
       transparent 85%
     );
   }
