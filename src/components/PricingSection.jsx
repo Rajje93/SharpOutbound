@@ -8,53 +8,62 @@ const PricingSection = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Standard Plan */}
           <motion.div 
-            className="pricing-card p-8 rounded-2xl bg-dark-lighter"
+            className="pricing-card"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <h3 className="text-2xl font-semibold mb-4">Standard</h3>
-            <div className="price">$3,974/month</div>
-            <ul>
+            <h3>STANDARD</h3>
+            <div className="price-container">
+              <span className="currency">$</span>
+              <span className="price">3458</span>
+              <span className="period">/month</span>
+            </div>
+            <ul className="features-list">
               <li>10 Ideal clients in 30 days guaranteed</li>
               <li>Ad-hoc sales system build</li>
               <li>Save 15+ hours a week from prospecting</li>
               <li>Pause or cancel anytime</li>
               <li>Expand to new markets</li>
             </ul>
-            <a 
-              href="https://buy.stripe.com/aEU00O2YYdgYc80144"
-              className="btn btn-light w-full text-center"
-              style={{ display: 'block', textDecoration: 'none' }}
-            >
-              Get started today
-            </a>
+            <div className="button-wrapper">
+              <a 
+                href="https://buy.stripe.com/aEU00O2YYdgYc80144"
+                className="btn btn-light"
+                role="button"
+              >
+                Get started today
+              </a>
+            </div>
           </motion.div>
 
           {/* Premium Plan */}
           <motion.div 
-            className="pricing-card p-8 rounded-2xl bg-dark-lighter"
+            className="pricing-card popular"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <h3 className="text-2xl font-semibold mb-4">Premium</h3>
-            <div className="price">$5,974/month</div>
-            <ul>
+            <h3>COMMIT TO 3 MONTHS & SAVE $2,000</h3>
+            <div className="price-container">
+              <span className="currency">$</span>
+              <span className="price">8374</span>
+              <span className="period">/month</span>
+            </div>
+            <ul className="features-list">
               <li>10 Ideal clients in 30 days guaranteed</li>
               <li>Ad-hoc sales system build</li>
               <li>Save 15+ hours a week from prospecting</li>
               <li>Pause or cancel anytime</li>
               <li>Expand to new markets</li>
-              <li>Documentation with every solution</li>
-              <li>45-minute systems consultation</li>
-              <li>Discounted subscription transition</li>
             </ul>
-            <a 
-              href="https://buy.stripe.com/dR68xkczygta5JC9AB"
-              className="btn btn-primary w-full text-center"
-              style={{ display: 'block', textDecoration: 'none' }}
-            >
-              Sign up now →
-            </a>
+            <div className="button-wrapper">
+              <a 
+                href="https://buy.stripe.com/dR68xkczygta5JC9AB"
+                className="btn btn-primary"
+                role="button"
+              >
+                Sign up now →
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
