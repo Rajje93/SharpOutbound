@@ -23,11 +23,7 @@ const PricingSection = () => {
             </ul>
             <a 
               href="https://buy.stripe.com/aEU00O2YYdgYc80144"
-              className="get-started-button block text-center"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.replace('https://buy.stripe.com/aEU00O2YYdgYc80144');
-              }}
+              className="get-started-button block text-center no-underline"
             >
               Get started today
             </a>
@@ -53,11 +49,7 @@ const PricingSection = () => {
             </ul>
             <a 
               href="https://buy.stripe.com/dR68xkczygta5JC9AB"
-              className="sign-up-button block text-center"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.replace('https://buy.stripe.com/dR68xkczygta5JC9AB');
-              }}
+              className="sign-up-button block text-center no-underline"
             >
               Sign up now →
             </a>
