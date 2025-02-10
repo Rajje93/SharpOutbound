@@ -2,10 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const PricingSection = () => {
-  const handlePurchase = (url) => {
-    window.open(url, '_self');  // This forces same window
-  };
-
   return (
     <section id="pricing" className="relative py-20 bg-dark">
       <div className="container mx-auto px-4">
@@ -25,12 +21,16 @@ const PricingSection = () => {
               <li>Pause or cancel anytime</li>
               <li>Expand to new markets</li>
             </ul>
-            <button 
-              onClick={() => handlePurchase('https://buy.stripe.com/aEU00O2YYdgYc80144')}
-              className="get-started-button"
+            <a 
+              href="https://buy.stripe.com/aEU00O2YYdgYc80144"
+              className="get-started-button block text-center"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.replace('https://buy.stripe.com/aEU00O2YYdgYc80144');
+              }}
             >
               Get started today
-            </button>
+            </a>
           </motion.div>
 
           {/* Premium Plan */}
@@ -51,12 +51,16 @@ const PricingSection = () => {
               <li>45-minute systems consultation</li>
               <li>Discounted subscription transition</li>
             </ul>
-            <button 
-              onClick={() => handlePurchase('https://buy.stripe.com/dR68xkczygta5JC9AB')}
-              className="sign-up-button"
+            <a 
+              href="https://buy.stripe.com/dR68xkczygta5JC9AB"
+              className="sign-up-button block text-center"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.replace('https://buy.stripe.com/dR68xkczygta5JC9AB');
+              }}
             >
               Sign up now →
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>
