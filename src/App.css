@@ -294,6 +294,11 @@ p {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
+  .background-orbs {
+    opacity: 0.4; /* Reduce orb brightness on mobile */
+    filter: brightness(0.7); /* Additional brightness reduction */
+  }
+
   .background-orbs::before {
     content: '';
     position: absolute;
