@@ -16,7 +16,8 @@ const Pricing = () => {
         "Expand to new markets"
       ],
       buttonText: "Get started today",
-      buttonStyle: "light"
+      buttonStyle: "light",
+      stripeUrl: "https://buy.stripe.com/aEU00O2YYdgYc80144"
     },
     {
       name: "COMMIT TO 3 MONTHS & SAVE $2,000",
@@ -31,7 +32,8 @@ const Pricing = () => {
       ],
       buttonText: "Sign up now →",
       buttonStyle: "primary",
-      isPopular: true
+      isPopular: true,
+      stripeUrl: "https://buy.stripe.com/dR68xkczygta5JC9AB"
     },
     {
       name: "NEED MORE CLIENTS?",
@@ -45,6 +47,13 @@ const Pricing = () => {
       buttonStyle: "gradient"
     }
   ];
+
+  const handleClick = (url?: string) => {
+    if (url) {
+      console.log('Navigating to:', url);
+      window.location.href = url;
+    }
+  };
 
   return (
     <section id="pricing" className="pricing">
@@ -99,6 +108,7 @@ const Pricing = () => {
                   className={`btn btn-${plan.buttonStyle}`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={() => handleClick(plan.stripeUrl)}
                 >
                   {plan.buttonText}
                 </motion.button>
