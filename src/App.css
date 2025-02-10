@@ -295,20 +295,21 @@ p {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .background-orbs::before {
-    width: 200vw;  /* Much larger */
-    height: 200vw;
-    top: 20%;  /* Keep at top */
+    width: 300vw;  /* Much much larger */
+    height: 300vw;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0.7;  /* More visible */
-    filter: blur(120px);
+    opacity: 0.85;  /* Much more visible */
+    filter: blur(140px);
     background: radial-gradient(
       circle at center,
-      rgba(56, 115, 255, 1) 0%,    /* More intense blue */
-      rgba(56, 115, 255, 0.8) 30%, /* Brighter middle */
-      rgba(56, 115, 255, 0.4) 60%, /* Brighter outer */
+      rgba(56, 115, 255, 1) 0%,      /* Full intensity blue */
+      rgba(56, 115, 255, 0.9) 30%,   /* Very bright middle */
+      rgba(56, 115, 255, 0.6) 60%,   /* Brighter outer */
       transparent 85%
     );
+    mix-blend-mode: screen;  /* Added for extra glow */
   }
 
   .background-orbs::after {
