@@ -295,33 +295,21 @@ p {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .background-orbs {
-    opacity: 0.4; /* Reduce orb brightness on mobile */
-    filter: brightness(0.7); /* Additional brightness reduction */
+    opacity: 0.4;
+    filter: brightness(0.7);
+    width: 70vw; /* Make orbs cover 70% of viewport width */
+    height: 70vh; /* Make orbs cover 70% of viewport height */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Ensure perfect centering */
+    top: 15vh; /* Position from top */
   }
 
-  .background-orbs::before {
-    content: '';
-    position: absolute;
-    width: 300vw;
-    height: 300vw;
-    top: -50%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.85;
-    filter: blur(140px);
-    background: radial-gradient(
-      circle at center,
-      rgba(56, 115, 255, 1) 0%,
-      rgba(56, 115, 255, 0.9) 30%,
-      rgba(56, 115, 255, 0.6) 60%,
-      transparent 85%
-    );
-    mix-blend-mode: screen;
-    z-index: -1;
-  }
-
+  .background-orbs::before,
   .background-orbs::after {
-    display: none;
+    width: 70vw;
+    height: 70vh;
+    background-size: contain;
+    background-position: center;
   }
 }
 
