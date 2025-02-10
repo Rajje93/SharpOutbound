@@ -23,7 +23,8 @@ const PricingSection = () => {
             </ul>
             <a 
               href="https://buy.stripe.com/aEU00O2YYdgYc80144"
-              className="get-started-button block text-center no-underline"
+              className="btn btn-light w-full text-center"
+              style={{ display: 'block', textDecoration: 'none' }}
             >
               Get started today
             </a>
@@ -49,7 +50,8 @@ const PricingSection = () => {
             </ul>
             <a 
               href="https://buy.stripe.com/dR68xkczygta5JC9AB"
-              className="sign-up-button block text-center no-underline"
+              className="btn btn-primary w-full text-center"
+              style={{ display: 'block', textDecoration: 'none' }}
             >
               Sign up now →
             </a>
