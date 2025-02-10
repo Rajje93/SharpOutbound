@@ -2,6 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const PricingSection = () => {
+  const handleStandardClick = () => {
+    window.location.href = 'https://buy.stripe.com/aEU00O2YYdgYc80144';
+  };
+
+  const handlePremiumClick = () => {
+    window.location.href = 'https://buy.stripe.com/dR68xkczygta5JC9AB';
+  };
+
   return (
     <section id="pricing" className="relative py-20 bg-dark">
       <div className="container mx-auto px-4">
@@ -26,13 +34,13 @@ const PricingSection = () => {
               <li>Expand to new markets</li>
             </ul>
             <div className="button-wrapper">
-              <a 
-                href="https://buy.stripe.com/aEU00O2YYdgYc80144"
+              <button 
+                onClick={handleStandardClick}
                 className="btn btn-light"
-                role="button"
+                tabIndex="0"
               >
                 Get started today
-              </a>
+              </button>
             </div>
           </motion.div>
 
@@ -56,13 +64,13 @@ const PricingSection = () => {
               <li>Expand to new markets</li>
             </ul>
             <div className="button-wrapper">
-              <a 
-                href="https://buy.stripe.com/dR68xkczygta5JC9AB"
+              <button 
+                onClick={handlePremiumClick}
                 className="btn btn-primary"
-                role="button"
+                tabIndex="0"
               >
                 Sign up now →
-              </a>
+              </button>
             </div>
           </motion.div>
         </div>
