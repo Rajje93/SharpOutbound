@@ -295,26 +295,26 @@ p {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .background-orbs {
-    opacity: 0.4;
-    filter: brightness(0.7);
+    opacity: 0.5;
+    filter: brightness(0.8);
     width: 100vw;
-    height: 40vh; /* Reduced height */
+    height: 40vh;
     left: 0;
     transform: none;
     top: 30vh;
-    border-radius: 100%; /* More aggressive rounding */
-    overflow: visible; /* Allow glow to extend beyond */
+    border-radius: 100%;
+    overflow: visible;
   }
 
   .background-orbs::before,
   .background-orbs::after {
     width: 100vw;
     height: 40vh;
-    background-size: 150% auto; /* Larger background */
+    background-size: 150% auto;
     background-position: center;
     border-radius: 100%;
-    filter: blur(80px); /* Increased blur */
-    transform: scale(1.2); /* Slightly larger than container */
+    filter: blur(70px);
+    transform: scale(1.2);
   }
 }
 
