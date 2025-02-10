@@ -297,22 +297,24 @@ p {
   .background-orbs {
     opacity: 0.4;
     filter: brightness(0.7);
-    width: 100vw; /* Full width */
-    height: 50vh; /* Half height */
-    left: 0; /* Align to left edge */
-    transform: none; /* Remove previous transform */
-    top: 25vh; /* Center vertically */
-    border-radius: 50%; /* Make it more rounded */
+    width: 100vw;
+    height: 40vh; /* Reduced height */
+    left: 0;
+    transform: none;
+    top: 30vh;
+    border-radius: 100%; /* More aggressive rounding */
+    overflow: visible; /* Allow glow to extend beyond */
   }
 
   .background-orbs::before,
   .background-orbs::after {
     width: 100vw;
-    height: 50vh;
-    background-size: cover;
+    height: 40vh;
+    background-size: 150% auto; /* Larger background */
     background-position: center;
-    border-radius: 50%; /* Round the gradient edges */
-    filter: blur(60px); /* Soften the edges */
+    border-radius: 100%;
+    filter: blur(80px); /* Increased blur */
+    transform: scale(1.2); /* Slightly larger than container */
   }
 }
 
