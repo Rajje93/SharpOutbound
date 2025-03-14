@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Black background circle -->
+  <circle cx="100" cy="100" r="100" fill="#000000"/>
+  
+  <!-- White details -->
+  <circle cx="80" cy="100" r="8" fill="#ffffff" />
+  <circle cx="120" cy="100" r="8" fill="#ffffff" />
+  <path
+    fill="#ffffff"
+    d="M100 130c-8.4 0-15.2-6.8-15.2-15.2 0-8.4 6.8-15.2 15.2-15.2s15.2 6.8 15.2 15.2c0 8.4-6.8 15.2-15.2 15.2z"
+  />
+</svg> 
